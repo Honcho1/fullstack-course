@@ -6,6 +6,11 @@ body {
   flex-direction: column;
   min-height: 95vh;
 }
+
+.logo {
+  margin-top: 20px;
+}
+
 .main {
   flex: 1;
 }
@@ -18,4 +23,3 @@ footer {
   text-align: right;
   color: midnightblue;
 }
-
