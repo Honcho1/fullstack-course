@@ -48,14 +48,28 @@ footer {
 }
 
 @media (max-width: 680px) {
+  .logo {
+    width: 100px;
+    margin: 0 auto;
+  }
+
   .left,
   .right {
     width: 100%;
     float: none;
+    display: block;
+    margin-bottom: 30px;
   }
 
   .tile-image {
     width: 100%;
     margin-right: 0;
+    margin-bottom: 30px;
+    object-fit: cover;
+  }
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
   }
 }
