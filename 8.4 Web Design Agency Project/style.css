@@ -8,7 +8,7 @@ body {
 }
 
 .logo {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .main {
@@ -19,6 +19,24 @@ body {
   color: midnightblue;
 }
 
+.card {
+  width: 45%;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.tile-image {
+  margin-right: 50px;
+  width: 300px;
+  float: left;
+}
+
 h1 {
   font-size: 5rem;
 }
@@ -26,4 +44,18 @@ h1 {
 footer {
   text-align: right;
   color: midnightblue;
+  clear: both;
+}
+
+@media (max-width: 680px) {
+  .left,
+  .right {
+    width: 100%;
+    float: none;
+  }
+
+  .tile-image {
+    width: 100%;
+    margin-right: 0;
+  }
 }
