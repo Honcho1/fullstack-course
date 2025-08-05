@@ -41,6 +41,13 @@ function playSound(key) {
   }
 }
 
+let button = document.querySelectorAll(".drum");
+button.forEach((button) => {
+  button.addEventListener("click", function () {
+    playSound(this.innerHTML);
+  });
+});
+
 // let button = document.querySelectorAll(".drum");
 
 // button.forEach((button) => {
