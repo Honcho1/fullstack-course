@@ -44,6 +44,10 @@ function playSound(key) {
 
   if (button) {
     button.classList.add("pressed");
+
+    setTimeout(() => {
+      button.classList.remove("pressed");
+    }, 100);
   }
 }
 
