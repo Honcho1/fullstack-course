@@ -1,4 +1,6 @@
 function playSound(key) {
+  const button = document.querySelector(`.${key}`);
+
   switch (key) {
     case "w":
       const crash = new Audio("./sounds/crash.mp3");
@@ -38,6 +40,10 @@ function playSound(key) {
     default:
       console.log(key);
       break;
+  }
+
+  if (button) {
+    button.classList.add("pressed");
   }
 }
 
