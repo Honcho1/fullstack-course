@@ -1,1 +1,4 @@
-$("h1").css("color", "red");
+$("body").keydown(function (event) {
+  const key = event.key;
+  $("h1").text(key);
+});
