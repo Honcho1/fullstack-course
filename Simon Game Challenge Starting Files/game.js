@@ -1,12 +1,20 @@
+const buttoncolors = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
-gamePattern.push(randomChosenColor);
-
-const buttonColors = ["red", "blue", "green", "yellow"];
-const randomChosenColor = buttonColors[nextSequence()];
 
 function nextSequence() {
   const randomNumber = Math.floor(Math.random() * 4);
-  return randomNumber;
+  const randomChosenColor = buttoncolors[randomNumber];
+
+  gamePattern.push(randomChosenColor);
+
+  $(`#${randomChosenColor}`).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+
+  playSound(randomChosenColor);
+
+  return randomChosenColor;
 }
 
-$(`#${randomChosenColor}`).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+function playSound(color) {
+  const sound = new Audio(`./sounds/${color}.mp3`);
+  sound.play();
+}
