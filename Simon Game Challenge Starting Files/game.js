@@ -8,3 +8,5 @@ function nextSequence() {
   const randomNumber = Math.floor(Math.random() * 4);
   return randomNumber;
 }
+
+$(`#${randomChosenColor}`).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
