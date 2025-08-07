@@ -18,3 +18,7 @@ function playSound(color) {
   const sound = new Audio(`./sounds/${color}.mp3`);
   sound.play();
 }
+
+$(".btn").on("click", function () {
+  const userChosenColor = $(this).attr("id");
+});
