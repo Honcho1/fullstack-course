@@ -2,10 +2,13 @@ const buttoncolors = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
 let userClickedPattern = [];
 let gameStarted = false;
+let level = 0;
 
 $(document).keypress(function () {
   if (!gameStarted) {
     gameStarted = true;
+    level = 0;
+    $("level-title").text(`Level ${level}`);
     nextSequence();
   }
 });
@@ -17,7 +20,6 @@ function nextSequence() {
   gamePattern.push(randomChosenColor);
 
   $(`#${randomChosenColor}`).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
-
   playSound(randomChosenColor);
 
   return randomChosenColor;
