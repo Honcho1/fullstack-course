@@ -15,13 +15,14 @@ function nextSequence() {
   return randomChosenColor;
 }
 
-function playSound(color) {
-  const sound = new Audio(`./sounds/${color}.mp3`);
+function playSound(name) {
+  const sound = new Audio(`./sounds/${name}.mp3`);
   sound.play();
 }
 
 $(".btn").on("click", function () {
   const userChosenColor = $(this).attr("id");
   userClickedPattern.push(userChosenColor);
-  console.log(userClickedPattern);
+  playSound(userChosenColor);
+  console.log("User sequence: ", userClickedPattern);
 });
