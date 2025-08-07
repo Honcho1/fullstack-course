@@ -1,5 +1,6 @@
 const buttoncolors = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
+userClickedPattern = [];
 
 function nextSequence() {
   const randomNumber = Math.floor(Math.random() * 4);
