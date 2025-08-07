@@ -8,12 +8,15 @@ $(document).keypress(function () {
   if (!gameStarted) {
     gameStarted = true;
     level = 0;
-    $("level-title").text(`Level ${level}`);
+    $("#level-title").text(`Level ${level}`);
     nextSequence();
   }
 });
 
 function nextSequence() {
+  level++;
+  $("#level-title").text(`Level ${level}`);
+
   const randomNumber = Math.floor(Math.random() * 4);
   const randomChosenColor = buttoncolors[randomNumber];
 
