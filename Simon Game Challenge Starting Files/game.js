@@ -26,3 +26,10 @@ $(".btn").on("click", function () {
   playSound(userChosenColor);
   console.log("User sequence: ", userClickedPattern);
 });
+
+function animatePress(currentColor) {
+  $(`#${currentColor}`).addClass("pressed");
+  setTimeout(function () {
+    $(`#${currentColor}`).removeClass("pressed");
+  }, 100);
+}
