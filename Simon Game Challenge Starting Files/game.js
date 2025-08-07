@@ -1,6 +1,14 @@
 const buttoncolors = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
 let userClickedPattern = [];
+let gameStarted = false;
+
+$(document).keypress(function () {
+  if (!gameStarted) {
+    gameStarted = true;
+    nextSequence();
+  }
+});
 
 function nextSequence() {
   const randomNumber = Math.floor(Math.random() * 4);
