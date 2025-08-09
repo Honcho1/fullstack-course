@@ -1,6 +1,7 @@
 import generateName from "sillyname";
-import superheroes from "superheroes";
+import { randomSuperhero } from "superheroes";
 
 var sillyName = generateName();
 
-console.log(`My name is ${sillyName}.`);
+// console.log(`My name is ${sillyName}.`);
+console.log(`I am ${randomSuperhero()}!`);
