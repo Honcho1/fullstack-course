@@ -36,6 +36,10 @@ inquirer
   .then((answers) => {
     const { url, filename, format } = answers;
     const filePath = `${filename}.${format}`;
+    const textFilePath = `${filename}.txt`;
+
+    fs.writeFileSync(textFilePath, url, "utf8");
+    console.log(`URL saved to ${textFilePath}.`);
 
     if (format === "svg") {
       const svgString = qr.imageSync(url, { type: "svg" });
