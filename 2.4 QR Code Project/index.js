@@ -6,6 +6,7 @@
 
 import inquirer from "inquirer";
 import qr from "qr-image";
+import fs from "fs";
 
 inquirer
   .prompt([
@@ -33,7 +34,20 @@ inquirer
     },
   ])
   .then((answers) => {
-    const { url, filename } = answers;
+    const { url, filename, format } = answers;
+    const filePath = `${filename}.${format}`;
+
+    if (format === "svg") {
+      const svgString = qr.imageSync(url, { type: "svg" });
+      fs.writeFileSync(filePath, svgString);
+      console.log(`SVG QR Code saved to ${filePath}.`);
+    } else {
+      const pngStream = qr.image(url, { type: "png" });
+      const out = fs.createWriteStream(filePath);
+      pngStream.pipe(out);
+      out.on("finish", () => console.log(`PNG QR Code saved to ${filePath}.`));
+      out.on("error", (err) => console.error("Write error:", err));
+    }
   })
   .catch((error) => {
     if (error.isTtyError) {
