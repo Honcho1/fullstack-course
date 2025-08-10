@@ -13,13 +13,22 @@ inquirer
       name: "url",
       message: "Please enter a URL to generate a QR code:",
       validate: (input) => input.trim() !== "" || "URL cannot be empty.",
+      filter: (input) => input.trim(),
     },
     {
       type: "input",
       name: "filename",
       message:
         "Please enter a filename for the QR code image (without extension):",
-      choices: ["qr_code", "my_qr", "default"],
+      default: "qrcode",
+      filter: (input) => input.trim() || "qrcode",
+    },
+    {
+      type: "list",
+      name: "format",
+      message: "Which format would you like to save the QR code in?",
+      choices: ["png", "svg"],
+      default: "png",
     },
   ])
   .then((answers) => {
