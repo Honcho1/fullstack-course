@@ -7,7 +7,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  res.send("<h1>About</h1><p>This is the about page.</p>");
+  res.send(
+    "<h1>About Me</h1><p>This is the about page.</p><p>My name is Daniel Nwadinkpa. I am a software engineer.</p>"
+  );
 });
 
 app.get("/contact", (req, res) => {
