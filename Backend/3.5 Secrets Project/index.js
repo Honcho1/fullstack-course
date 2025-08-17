@@ -28,3 +28,7 @@ app.post("/check", (req, res) => {
     res.sendFile(`${__dirname}/public/index.html`);
   }
 });
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
