@@ -14,3 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = __dirname(__filename);
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get("/", (req, res) => {
+  res.sendFile(`${__dirname}/public/index.html`);
+});
