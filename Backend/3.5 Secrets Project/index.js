@@ -11,7 +11,7 @@ const app = express();
 const PORT = 3000;
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = __dirname(__filename);
+const __dirname = dirname(__filename);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
