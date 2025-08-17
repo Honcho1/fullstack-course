@@ -20,6 +20,25 @@ app.get("/", (req, res) => {
   res.sendFile(`${__dirname}/public/index.html`);
 });
 
+app.post("/submit", (req, res) => {
+  const { street, pet } = req.body;
+  const bandName = `${street} ${pet}`;
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Band Name Result</title>
+    </head>
+    <body>
+      <h1>Your Band Name</h1>
+      <p>${bandName}</p>
+      <a href="/">Back to Form</a>
+    </body>
+    </html>`);
+});
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${port}`);
 });
