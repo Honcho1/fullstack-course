@@ -14,6 +14,10 @@ app.get("/", (req, res) => {
   res.send("Hello");
 });
 
+app.get("/about", (req, res) => {
+  res.send("This is the about page");
+});
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
