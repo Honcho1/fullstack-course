@@ -12,7 +12,10 @@ app.get("/", (req, res) => {
   res.render("index.ejs", { count: null });
 });
 
-app.post("/submit", (req, res) => {});
+app.post("/submit", (req, res) => {
+  const fName = req.body.fName || "";
+  const lName = req.body.lName || "";
+});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
