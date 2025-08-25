@@ -16,7 +16,7 @@ app.post("/submit", (req, res) => {
   const fName = req.body.fName || "";
   const lName = req.body.lName || "";
 
-  const lettersOnly = (fNameme + lName).replace(/[^A-Za-z]/g, "");
+  const lettersOnly = (fName + lName).replace(/[^A-Za-z]/g, "");
   const count = lettersOnly.length;
 
   res.render("index.ejs", { count });
