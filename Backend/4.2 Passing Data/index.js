@@ -18,6 +18,8 @@ app.post("/submit", (req, res) => {
 
   const lettersOnly = (fNameme + lName).replace(/[^A-Za-z]/g, "");
   const count = lettersOnly.length;
+
+  res.render("index.ejs", { count });
 });
 
 app.listen(port, () => {
