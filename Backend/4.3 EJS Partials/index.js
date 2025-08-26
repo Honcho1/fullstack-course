@@ -17,6 +17,14 @@ app.get("/", (req, res) => {
 
 app.use(express.static("public"));
 
+app.get("/about", (req, res) => {
+  res.render("about");
+});
+
+app.get("/contact", (req, res) => {
+  res.render("contact");
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
